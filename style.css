@@ -102,3 +102,16 @@ li.soon {
 .delete-btn:hover {
   color: #ef4444;
 }
+
+
+/* footer */
+.footer {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.footer a {
+  color: #3b82f6;
+}
