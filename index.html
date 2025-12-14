@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DueSoon | Deadline Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="app">
+    <h1>DueSoon</h1>
+    <p class="tagline">Track deadlines. Stay ahead.</p>
+
+    <form id="deadline-form">
+      <input
+        type="text"
+        id="title"
+        placeholder="Assignment name"
+        required
+        autofocus
+      />
+      <input
+        type="date"
+        id="dueDate"
+        required
+      />
+      <button type="submit">Add</button>
+    </form>
+
+    <ul id="deadline-list"></ul>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
