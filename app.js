@@ -94,8 +94,14 @@ function renderDeadlines() {
       li.append(titleEdit, dateEdit, saveBtn);
     });
 
-    li.append(span, editBtn, deleteBtn);
-    list.appendChild(li);
+    const actions = document.createElement("div");
+  actions.className = "actions";
+
+  actions.append(editBtn, deleteBtn);
+
+  li.append(span, actions);
+  list.appendChild(li);
+  
   });
 }
 

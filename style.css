@@ -144,3 +144,26 @@ li input {
   padding: 6px;
   margin-right: 6px;
 }
+
+.edit-btn,
+.save-btn,
+.delete-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #888;
+}
+
+.edit-btn:hover {
+  color: #3b82f6;
+}
+
+.save-btn:hover {
+  color: #22c55e;
+}
+
+.delete-btn:hover {
+  color: #ef4444;
+}
