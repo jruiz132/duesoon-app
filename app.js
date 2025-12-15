@@ -44,12 +44,19 @@ function renderDeadlines() {
     const li = document.createElement("li");
     const daysLeft = getDaysLeft(d.dueDate);
 
-    const span = document.createElement("span");
-    span.textContent = `${d.title} — ${getLabel(daysLeft)}`;
-
     if (daysLeft <= 3) li.classList.add("urgent");
     else if (daysLeft <= 7) li.classList.add("soon");
 
+    // ===== Display Mode =====
+    const span = document.createElement("span");
+    span.textContent = `${d.title} — ${getLabel(daysLeft)}`;
+
+    // ===== Edit Button =====
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "✏️";
+    editBtn.className = "edit-btn";
+
+    // ===== Delete Button =====
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "✕";
     deleteBtn.className = "delete-btn";
@@ -60,11 +67,38 @@ function renderDeadlines() {
       renderDeadlines();
     });
 
-    li.appendChild(span);
-    li.appendChild(deleteBtn);
+    // ===== Edit Logic =====
+    editBtn.addEventListener("click", () => {
+      li.innerHTML = "";
+
+      const titleEdit = document.createElement("input");
+      titleEdit.value = d.title;
+
+      const dateEdit = document.createElement("input");
+      dateEdit.type = "date";
+      dateEdit.value = d.dueDate;
+
+      const saveBtn = document.createElement("button");
+      saveBtn.textContent = "💾";
+      saveBtn.className = "save-btn";
+
+      saveBtn.addEventListener("click", () => {
+        deadlines[index] = {
+          title: titleEdit.value.trim(),
+          dueDate: dateEdit.value
+        };
+        saveDeadlines();
+        renderDeadlines();
+      });
+
+      li.append(titleEdit, dateEdit, saveBtn);
+    });
+
+    li.append(span, editBtn, deleteBtn);
     list.appendChild(li);
   });
 }
+
 
 // ===== Events =====
 form.addEventListener("submit", e => {

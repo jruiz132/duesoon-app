@@ -115,3 +115,32 @@ li.soon {
 .footer a {
   color: #3b82f6;
 }
+
+
+/* edit buttons */
+
+.edit-btn,
+.save-btn {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+.edit-btn:hover {
+  color: #3b82f6;
+}
+
+.save-btn:hover {
+  color: #22c55e;
+}
+
+li input {
+  background: #161616;
+  color: #eaeaea;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 6px;
+  margin-right: 6px;
+}
